@@ -1,6 +1,7 @@
 package com.js284;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Order
@@ -12,6 +13,7 @@ public class Order {
 
     private List<Item> items;
     private Status status;
+    private UUID uuid;
 
     public enum Status  {
         New,
@@ -22,6 +24,7 @@ public class Order {
     public Order(List<Item> items) {
         this.items=items;
         this.status = Status.New;
+        this.uuid = UUID.randomUUID();
     }
 
     public List<Item> GetItems(){
@@ -35,4 +38,9 @@ public class Order {
 	public Status GetStatus() {
 		return this.status;
 	}
+
+	public UUID GetId() {
+		return uuid;
+	}
+
 }

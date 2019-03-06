@@ -2,11 +2,13 @@ package com.js284;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
@@ -18,12 +20,20 @@ import org.junit.runner.RunWith;
 
 public class OrderTest {
 
-    @Test
-    public void testCreateOrder(){
-        List<Item> items = Arrays.asList(
+    List<Item> items;
+
+    @BeforeEach
+    public void SetupBeforeEach(){
+        items = Arrays.asList(
             new Item(1, "pizza1", 12.34),
             new Item(2, "pizza2", 22.34)
         );
+
+    }
+
+
+    @Test
+    public void testCreateOrder(){
 
         Order order = new Order(items);
 
@@ -32,26 +42,28 @@ public class OrderTest {
 
     @Test
     public void testUpdateStatus(){
-        List<Item> items = Arrays.asList(
-            new Item(1, "pizza1", 12.34),
-            new Item(2, "pizza2", 22.34)
-        );
 
         Order order = new Order(items);
         order.SetStatus(Order.Status.Done);
 
         assertEquals(Order.Status.Done, order.GetStatus());
     }
+
+
     @Test
     public void testDefaultStatus(){
-        List<Item> items = Arrays.asList(
-            new Item(1, "pizza1", 12.34),
-            new Item(2, "pizza2", 22.34)
-        );
 
         Order order = new Order(items);
 
         assertEquals(Order.Status.New, order.GetStatus());
     }
+
+    @Test
+    public void testGetOrderId(){
+        Order order = new Order(items);
+        UUID actual = order.GetId();
+        assertNotNull(actual);
+    }
+
     
 }

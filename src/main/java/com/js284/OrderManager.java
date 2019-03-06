@@ -37,4 +37,13 @@ public class OrderManager {
         return output;
 	}
 
+	public void RemoveFromList(UUID idToRemove) {
+        for (Order order : orders) {
+            if (order.GetId()==idToRemove) {
+                orders.remove(order);
+                    return;
+            }
+        }    
+    }
+
 }

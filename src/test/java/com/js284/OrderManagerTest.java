@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,10 +20,10 @@ public class OrderManagerTest {
 
     Order order;
     OrderManager orderManager;
-
+    List<Item> items;
     @BeforeEach
     public void SetUpAll(){
-        List<Item> items = Arrays.asList(
+        items = Arrays.asList(
             new Item(1, "pizza1", 12.34),
             new Item(2, "pizza2", 22.34)
         );
@@ -80,8 +81,45 @@ public class OrderManagerTest {
         String output = orderManager.Print(Order.Status.Done);
 
         assertEquals("", output);
-
     }
 
+    @Test
+    public void testRemoveOrderFromListWithOneOrder(){
+        //start with empty list
+        ArrayList<Order> orderlist  = orderManager.GetOrderList();
+        assertEquals(0, orderlist.size());
+
+        //add one to list
+        orderManager.NewOrder(order);
+        UUID idToRemove = order.GetId();
+
+        assertEquals(1, orderlist.size());
+
+
+        //remove specific from list
+        orderManager.RemoveFromList(idToRemove);
+        assertEquals(0, orderlist.size());
+        
+    }
+    @Test
+    public void testRemoveOrderFromListWithManyOrders(){
+        //start with empty list
+        ArrayList<Order> orderlist  = orderManager.GetOrderList();
+        assertEquals(0, orderlist.size());
+
+        //add many to list
+        orderManager.NewOrder(new Order(items));
+        orderManager.NewOrder(new Order(items));
+        orderManager.NewOrder(new Order(items));
+        assertEquals(3, orderlist.size());
+
+
+        //remove specific from list
+        UUID idToRemove = orderManager.GetOrderList().get(1).GetId(); // <- the train :(
+        orderManager.RemoveFromList(idToRemove);
+        assertEquals(2, orderlist.size());
+        
+    }
+    
     
 }
