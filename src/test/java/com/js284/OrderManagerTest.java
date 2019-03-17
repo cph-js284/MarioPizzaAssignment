@@ -91,7 +91,7 @@ public class OrderManagerTest {
 
         //add one to list
         orderManager.NewOrder(order);
-        UUID idToRemove = order.GetId();
+        String idToRemove = order.GetId();
 
         assertEquals(1, orderlist.size());
 
@@ -115,7 +115,7 @@ public class OrderManagerTest {
 
 
         //remove specific from list
-        UUID idToRemove = orderManager.GetOrderList().get(1).GetId(); // <- the train :(
+        String idToRemove = orderManager.GetOrderList().get(0).GetId(); // <- the train :(
         orderManager.RemoveFromList(idToRemove);
         assertEquals(2, orderlist.size());
         

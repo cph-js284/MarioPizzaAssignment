@@ -13,7 +13,7 @@ public class Order {
 
     private List<Item> items;
     private Status status;
-    private UUID uuid;
+    private String uuid;
 
     public enum Status  {
         New,
@@ -24,7 +24,7 @@ public class Order {
     public Order(List<Item> items) {
         this.items=items;
         this.status = Status.New;
-        this.uuid = UUID.randomUUID();
+        this.uuid = UUID.randomUUID().toString();
     }
 
     public List<Item> GetItems(){
@@ -39,7 +39,7 @@ public class Order {
 		return this.status;
 	}
 
-	public UUID GetId() {
+	public String GetId() {
 		return uuid;
 	}
 

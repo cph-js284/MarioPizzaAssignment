@@ -61,7 +61,7 @@ public class OrderTest {
     @Test
     public void testGetOrderId(){
         Order order = new Order(items);
-        UUID actual = order.GetId();
+        String actual = order.GetId();
         assertNotNull(actual);
     }
 

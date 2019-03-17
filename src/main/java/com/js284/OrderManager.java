@@ -37,13 +37,15 @@ public class OrderManager {
         return output;
 	}
 
-	public void RemoveFromList(UUID idToRemove) {
+	public boolean RemoveFromList(String idToRemove) {
         for (Order order : orders) {
-            if (order.GetId()==idToRemove) {
+            if (order.GetId().equals(idToRemove)) {
                 orders.remove(order);
-                    return;
+                    return true;
             }
-        }    
+        }
+        return false;
+         
     }
 
 }

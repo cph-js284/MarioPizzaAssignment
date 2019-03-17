@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="7" failures="0" name="com.js284.OrderManagerTest" time="0.448" errors="0" skipped="0">
+<testsuite tests="7" failures="0" name="com.js284.OrderManagerTest" time="0.398" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.2+9-LTS"/>
@@ -46,7 +46,7 @@
     <property name="java.class.path" value="C:\Program Files\apache-maven-3.6.0\bin\..\boot\plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-11.0.2"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -67,11 +67,11 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="OrderManagerTest" name="testRemoveOrderFromListWithOneOrder()" time="0.432"/>
-  <testcase classname="OrderManagerTest" name="testPrintOrderDoneStatusOneOrders()" time="0"/>
-  <testcase classname="OrderManagerTest" name="testRemoveOrderFromListWithManyOrders()" time="0.016"/>
-  <testcase classname="OrderManagerTest" name="testEmptymanager()" time="0"/>
-  <testcase classname="OrderManagerTest" name="testPrintOrderNewStatusOneOrder()" time="0"/>
-  <testcase classname="OrderManagerTest" name="testPrintOrderNewStatusMoreOrders()" time="0"/>
-  <testcase classname="OrderManagerTest" name="testNotEmptymanager()" time="0"/>
+  <testcase classname="OrderManagerTest" name="testRemoveOrderFromListWithOneOrder()" time="0.389"/>
+  <testcase classname="OrderManagerTest" name="testPrintOrderDoneStatusOneOrders()" time="0.002"/>
+  <testcase classname="OrderManagerTest" name="testRemoveOrderFromListWithManyOrders()" time="0.002"/>
+  <testcase classname="OrderManagerTest" name="testEmptymanager()" time="0.001"/>
+  <testcase classname="OrderManagerTest" name="testPrintOrderNewStatusOneOrder()" time="0.001"/>
+  <testcase classname="OrderManagerTest" name="testPrintOrderNewStatusMoreOrders()" time="0.001"/>
+  <testcase classname="OrderManagerTest" name="testNotEmptymanager()" time="0.002"/>
 </testsuite>
