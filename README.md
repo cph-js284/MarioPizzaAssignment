@@ -18,7 +18,7 @@ mvn verify
 ```
 mvn -P jacoco test
 ```
-4) *for kicks* execute the application, the menusystem should be self-explanatory
+4) *for kicks* execute the application, the menusystem should be self-explanatory <br>
 *linux*
 ```
 mvn exec:java -Dexec.mainClass="com.js284.App"
