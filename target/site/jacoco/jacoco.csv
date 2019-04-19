@@ -1,6 +1,6 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 MariosPizza,com.js284,Item,0,22,0,0,0,8,0,4,0,4
-MariosPizza,com.js284,Order,0,19,0,0,0,8,0,4,0,4
+MariosPizza,com.js284,Order,0,26,0,0,0,10,0,5,0,5
 MariosPizza,com.js284,Order.Status,0,34,0,0,0,4,0,1,0,1
-MariosPizza,com.js284,App,4,0,0,0,2,0,1,0,1,0
-MariosPizza,com.js284,OrderManager,0,76,0,6,0,14,0,7,0,4
+MariosPizza,com.js284,App,245,0,12,0,66,0,8,0,2,0
+MariosPizza,com.js284,OrderManager,3,99,2,8,2,20,2,8,0,5

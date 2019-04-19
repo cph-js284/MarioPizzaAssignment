@@ -1,18 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>App.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MariosPizza</a> &gt; <a href="index.source.html" class="el_package">com.js284</a> &gt; <span class="el_source">App.java</span></div><h1>App.java</h1><pre class="source lang-java linenums">package com.js284;
 
-/**
- * Hello world!
- */
+import java.util.Arrays;
+import java.util.List;
+
 public final class App {
     private App() {
     }
 
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
+    public static void uiMenu(){
+<span class="nc" id="L11">        System.out.println(&quot;Options:&quot;);</span>
+<span class="nc" id="L12">        System.out.println(&quot;------------------------------------------&quot;);</span>
+<span class="nc" id="L13">        System.out.println(&quot;exit\tExit system&quot;);</span>
+<span class="nc" id="L14">        System.out.println(&quot;1\tPlace new order&quot;);</span>
+<span class="nc" id="L15">        System.out.println(&quot;2\tShow orders&quot;);</span>
+<span class="nc" id="L16">        System.out.println(&quot;3\tRemove order&quot;);</span>
+<span class="nc" id="L17">    }</span>
+
     public static void main(String[] args) {
-<span class="nc" id="L15">        System.out.println(&quot;Hello World!&quot;);</span>
-<span class="nc" id="L16">    }</span>
+<span class="nc" id="L20">        OrderManager ordermng = new OrderManager();</span>
+<span class="nc" id="L21">        String inputString = &quot;&quot;;</span>
+<span class="nc" id="L22">        String idToRemovestr = &quot;&quot;;</span>
+        
+
+<span class="nc" id="L25">        uiMenu();</span>
+        /*UI-loop */
+        while(true){
+<span class="nc" id="L28">            inputString = System.console().readLine().toLowerCase().trim();</span>
+            
+<span class="nc bnc" id="L30" title="All 2 branches missed.">            if(inputString.equals(&quot;exit&quot;))</span>
+<span class="nc" id="L31">                System.exit(1);</span>
+            
+<span class="nc bnc" id="L33" title="All 2 branches missed.">            if(inputString.equals(&quot;1&quot;)){</span>
+                try {
+<span class="nc" id="L35">                    System.out.println(&quot;Placing new order&quot;);</span>
+<span class="nc" id="L36">                    System.out.println(&quot;------------------------------------------&quot;);</span>
+<span class="nc" id="L37">                    System.out.print(&quot;Type ID:&quot;);</span>
+<span class="nc" id="L38">                    int id = Integer.parseInt(System.console().readLine());</span>
+<span class="nc" id="L39">                    System.out.print(&quot;Type TEXT:&quot;);</span>
+<span class="nc" id="L40">                    String str = System.console().readLine();</span>
+<span class="nc" id="L41">                    System.out.print(&quot;Type PRICE:&quot;);</span>
+<span class="nc" id="L42">                    double price = Double.parseDouble(System.console().readLine());</span>
+<span class="nc" id="L43">                    Item item = new Item(id, str, price);</span>
+    
+<span class="nc" id="L45">                    List&lt;Item&gt; items = Arrays.asList(item);</span>
+<span class="nc" id="L46">                    Order order = new Order(items);</span>
+<span class="nc" id="L47">                    ordermng.NewOrder(order);</span>
+<span class="nc" id="L48">                    System.out.println(&quot;------------------------------------------&quot;);</span>
+<span class="nc" id="L49">                    System.out.println(&quot;Order Placed&quot;);</span>
+<span class="nc" id="L50">                    System.out.println(&quot;------------------------------------------&quot;);</span>
+<span class="nc" id="L51">                    uiMenu();</span>
+                        
+<span class="nc" id="L53">                } catch (Exception e) {</span>
+<span class="nc" id="L54">                    System.out.println(&quot;------------------------------------------&quot;);</span>
+<span class="nc" id="L55">                    System.out.println(&quot;------------------------------------------&quot;);</span>
+<span class="nc" id="L56">                    System.out.println(&quot;Invalid input - order not placed&quot;);</span>
+<span class="nc" id="L57">                    System.out.println(&quot;------------------------------------------&quot;);</span>
+<span class="nc" id="L58">                    System.out.println(&quot;------------------------------------------&quot;);</span>
+<span class="nc" id="L59">                    uiMenu();</span>
+<span class="nc" id="L60">                }//try</span>
+            }//if
+
+<span class="nc bnc" id="L63" title="All 2 branches missed.">            if(inputString.equals(&quot;2&quot;)){</span>
+<span class="nc" id="L64">                System.out.println(&quot;Orders in system&quot;);</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">                for (Order order : ordermng.GetOrderList()) {</span>
+<span class="nc" id="L66">                    System.out.println(&quot;OrderID : &quot; + order.GetId());</span>
+<span class="nc" id="L67">                    System.out.println(&quot;Order item(s): &quot;);</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">                        for (Item orderitem : order.GetItems()) {</span>
+<span class="nc" id="L69">                            System.out.println(&quot;ItemID \t\t&quot; + orderitem.GetId());</span>
+<span class="nc" id="L70">                            System.out.println(&quot;ItemTEXT \t&quot; + orderitem.GetText());</span>
+<span class="nc" id="L71">                            System.out.println(&quot;ItemPRICE \t&quot; + orderitem.GetPrice());</span>
+<span class="nc" id="L72">                        }</span>
+<span class="nc" id="L73">                    System.out.println(&quot;------------------------------------------&quot;);</span>
+<span class="nc" id="L74">                }</span>
+            }//if
+            
+<span class="nc bnc" id="L77" title="All 2 branches missed.">            if(inputString.equals(&quot;3&quot;)){</span>
+                try {
+<span class="nc" id="L79">                    System.out.println(&quot;Enter orderID:&quot;);</span>
+<span class="nc" id="L80">                    idToRemovestr = System.console().readLine().toLowerCase().trim();</span>
+<span class="nc" id="L81">                    ordermng.RemoveFromList(idToRemovestr);</span>
+<span class="nc" id="L82">                    System.out.println(&quot;------------------------------------------&quot;);</span>
+<span class="nc" id="L83">                    System.out.println(&quot;Order removed&quot;);</span>
+<span class="nc" id="L84">                    System.out.println(&quot;------------------------------------------&quot;);</span>
+                    
+<span class="nc" id="L86">                } catch (Exception e) {</span>
+<span class="nc" id="L87">                    System.out.println(&quot;------------------------------------------&quot;);</span>
+<span class="nc" id="L88">                    System.out.println(&quot;------------------------------------------&quot;);</span>
+<span class="nc" id="L89">                    System.out.println(&quot;Invalid input - order not removed&quot;);</span>
+<span class="nc" id="L90">                    System.out.println(&quot;------------------------------------------&quot;);</span>
+<span class="nc" id="L91">                    System.out.println(&quot;------------------------------------------&quot;);</span>
+<span class="nc" id="L92">                    uiMenu();</span>
+<span class="nc" id="L93">                }</span>
+            }//if
+    
+
+
+        }
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

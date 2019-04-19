@@ -31,11 +31,22 @@ public class OrderManager {
 <span class="fc" id="L31">                continue; //to avoid nesting</span>
 <span class="fc bfc" id="L32" title="All 2 branches covered.">            for (Item item : order.GetItems()) {</span>
 <span class="fc" id="L33">                output += item.GetId() + &quot;-&quot; + item.GetText() + &quot;, &quot;;</span>
-            }    
+<span class="fc" id="L34">            }    </span>
 <span class="fc" id="L35">            output +=&quot;\n&quot;;</span>
-        }
+<span class="fc" id="L36">        }</span>
 <span class="fc" id="L37">        return output;</span>
 	}
+
+	public boolean RemoveFromList(String idToRemove) {
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">        for (Order order : orders) {</span>
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">            if (order.GetId().equals(idToRemove)) {</span>
+<span class="fc" id="L43">                orders.remove(order);</span>
+<span class="fc" id="L44">                    return true;</span>
+            }
+<span class="nc" id="L46">        }</span>
+<span class="nc" id="L47">        return false;</span>
+         
+    }
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
