@@ -34,11 +34,11 @@ public final class App {
                 try {
                     System.out.println("Placing new order");
                     System.out.println("------------------------------------------");
-                    System.out.print("Type ID:");
+                    System.out.println("Enter pizza-ID(int):");
                     int id = Integer.parseInt(System.console().readLine());
-                    System.out.print("Type TEXT:");
+                    System.out.println("Enter description:");
                     String str = System.console().readLine();
-                    System.out.print("Type PRICE:");
+                    System.out.println("Enter price(double):");
                     double price = Double.parseDouble(System.console().readLine());
                     Item item = new Item(id, str, price);
     
@@ -49,7 +49,7 @@ public final class App {
                     System.out.println("Order Placed");
                     System.out.println("------------------------------------------");
                     uiMenu();
-                        
+
                 } catch (Exception e) {
                     System.out.println("------------------------------------------");
                     System.out.println("------------------------------------------");
