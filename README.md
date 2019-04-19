@@ -1,9 +1,9 @@
-# MarioPizzaAssignment
+# TDD - MarioPizzaAssignment
+This is a Java Maven project for PBA Test soft2019spring.
 
-
-# what it is
-This is a Java Maven project for PBA Test soft2019spring. A hand-in for [assignment6](https://github.com/datsoftlyngby/soft2019spring-test/blob/master/Assignments/06%20TDD%20assignment.pdf)<br>
-This is a console application build using TDD method <br>
+# What it is
+This is a hand-in for [assignment6](https://github.com/datsoftlyngby/soft2019spring-test/blob/master/Assignments/06%20TDD%20assignment.pdf)<br>
+This is a Java console application build using TDD method <br>
 <br>
 
 *NB - please note the interface (the menusystem) was tagged on merely as a gimmick, and no tests were created to develop this*
